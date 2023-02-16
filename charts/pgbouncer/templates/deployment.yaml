@@ -65,7 +65,7 @@ spec:
           command:
             - /bin/pgbouncer_exporter
           args:
-            - --pgBouncer.connectionString=postgres://{{ .statsPgUser }}:${CONNECTION_PASSWORD}@localhost:6432?sslmode=disable&dbname=pgbouncer
+            - --pgBouncer.connectionString=postgres://{{ .statsPgUser }}:$(CONNECTION_PASSWORD)@localhost:6432?sslmode=disable&dbname=pgbouncer
           ports:
             - name: metrics
               containerPort: 9127
