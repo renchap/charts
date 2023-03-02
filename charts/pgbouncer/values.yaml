@@ -62,6 +62,10 @@ settings:
   clientIdleTimeout: 0
   clientLoginTimeout: 60
 
+# pgbouncer will stop accepting queries immediatly when the pod needs to be stopped
+# but will wait until all transactions end, or this amount of time
+terminationGracePeriodSeconds: 120
+
 prometheusExporter:
   enabled: true
   statsPgUser: pgbouncer_exporter

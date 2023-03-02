@@ -58,6 +58,12 @@ spec:
             - name: config
               mountPath: /etc/pgbouncer
               readOnly: true
+          terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
+          lifecycle:
+            preStop:
+              exec:
+                # Allow existing queries clients to complete transactions within 120 seconds
+                command: ["/bin/sh", "-c", "kill -s INT pgbouncer && sleep {{ .Values.terminationGracePeriodSeconds }}"]
         {{- with .Values.prometheusExporter }}
         {{- if .enabled }}
         - name: pgbouncer-exporter
