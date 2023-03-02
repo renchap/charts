@@ -3,6 +3,16 @@ entries:
   pgbouncer:
   - apiVersion: v2
     appVersion: 1.18.0
+    created: "2023-03-02T18:14:04.645711065Z"
+    description: Deploys pgbouncer
+    digest: 2733dc97d0b35e8dbc83135920567b1c6727b8cd73595d911a164a437b66fd96
+    name: pgbouncer
+    type: application
+    urls:
+    - https://github.com/renchap/charts/releases/download/pgbouncer-0.1.4/pgbouncer-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 1.18.0
     created: "2023-03-02T17:30:53.616765014Z"
     description: Deploys pgbouncer
     digest: bead55dff34edb8d790106210fca23258a998b3e0bafcd72ceb215c5e2565358
@@ -31,4 +41,4 @@ entries:
     urls:
     - https://github.com/renchap/charts/releases/download/pgbouncer-0.1.1/pgbouncer-0.1.1.tgz
     version: 0.1.1
-generated: "2023-03-02T17:30:53.616773814Z"
+generated: "2023-03-02T18:14:04.645723665Z"
