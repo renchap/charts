@@ -58,7 +58,6 @@ spec:
             - name: config
               mountPath: /etc/pgbouncer
               readOnly: true
-          terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
           lifecycle:
             preStop:
               exec:
@@ -96,6 +95,7 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
       volumes:
         - name: userssecret
           secret:
